@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">  
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 5 - Cálculo Área de Terreno</title>
+        <!-- Vinculación de CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <h1>Área del terreno</h1>
+        <form>
+            <!-- Selección de forma -->
+            <label for="forma">Seleccione la forma:</label>
+            <select id="forma" onchange="mostrarCampos()">
+            <option value="A">Forma A (Rectángulo + Triángulo)</option>
+            <option value="B">Forma B (Trapecio)</option>
+            </select>
+
+            <!-- Campos para la forma A -->
+            <div id="campos-forma-A">
+            <label for="baseA">Base del terreno (m):</label>
+            <input type="number" id="baseA" required>
+
+            <label for="alturaRect">Altura del rectángulo (m):</label>
+            <input type="number" id="alturaRect" required>
+
+            <label for="alturaTri">Altura del triángulo (m):</label>
+            <input type="number" id="alturaTri" required>
+            </div>
+
+            <!-- Campos para la forma B -->
+            <div id="campos-forma-B" style="display:none">
+            <label for="baseMayor">Base mayor (m):</label>
+            <input type="number" id="baseMayor" required>
+
+            <label for="baseMenor">Base menor (m):</label>
+            <input type="number" id="baseMenor" required>
+
+            <label for="alturaTrap">Altura del trapecio (m):</label>
+            <input type="number" id="alturaTrap" required>
+            </div>
+
+            <!-- Botones para calcular y reiniciar -->
+            <button type="button" onclick="calcularArea()">Calcular Área</button>
+            <button type="button" onclick="reiniciarFormulario()">Reiniciar</button>
+        </form>
+
+        <!-- Resultado -->
+        <p id="resultado" class="resultado"></p>
+
+        <!-- Vinculación de JavaScript -->
+        <script src="script.js"></script>
+    </body>
+</html>
